@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.header`
   display: flex;
@@ -27,12 +27,25 @@ export const Cart = styled(Link)`
 
     strong {
       display: block;
-      color:#fb7419;
+      color: #fb7419;
+      
     }
 
     span {
       font-size: 12px;
-      color: #FFA500;
+      color: #ffa500;
+    }
+
+    @media (max-width: 800px) {
+    strong {
+      display: none;
+
+    }
+    span{
+      display: none;
     }
   }
+  }
+
+
 `;

@@ -1,5 +1,5 @@
-import styled, { keyframes } from 'styled-components';
-import { darken, lighten } from 'polished';
+import styled, { keyframes } from "styled-components";
+import { darken, lighten } from "polished";
 
 const ScaleAnimation = keyframes`
  from {
@@ -18,7 +18,7 @@ export const Container = styled.div`
   background: #fff;
   border-radius: 4px;
   box-shadow: 5px 5px 10px 10px #fb7419;
-  animation: ${ScaleAnimation} .6s ease-in;
+  animation: ${ScaleAnimation} 0.6s ease-in;
 
   footer {
     margin-top: 30px;
@@ -37,7 +37,13 @@ export const Container = styled.div`
       transition: background 0.2s;
 
       &:hover {
-        background: ${darken(0.06, '#fb7419')};
+        background: ${darken(0.06, "#fb7419")};
+        color: #121213;
+        box-shadow: 5px 5px 2px 2px #121213;
+      }
+
+      @media (max-width: 800px) {
+        font-size: 0.8rem;
       }
     }
   }
@@ -98,15 +104,40 @@ export const ProductTable = styled.table`
 
     &:hover {
       svg {
-        color: ${darken(0.06, '#fb7419')};
+        color: ${darken(0.06, "#fb7419")};
       }
     }
 
     &:disabled {
       svg {
-        color: ${lighten(0.25, '#fb7419')};
+        color: ${lighten(0.25, "#fb7419")};
         cursor: not-allowed;
       }
+    }
+  }
+
+  @media (max-width: 650px) {
+    display: flex;
+    flex-direction: column;
+
+    tbody td {
+      padding: 3px;
+    }
+
+    img {
+      width: 2rem;
+      height: 3rem;
+    }
+    input {
+      width: 20px;
+    }
+
+    span {
+      font-size: 0.9rem;
+    }
+
+    strong {
+      display: none;
     }
   }
 `;
@@ -123,5 +154,14 @@ export const Total = styled.div`
   strong {
     font-size: 28px;
     margin-left: 5px;
+
+    @media (max-width: 650px) {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    font-size: 1rem;
   }
 `;

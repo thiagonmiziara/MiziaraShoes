@@ -8,7 +8,7 @@ const ScaleAnimation = keyframes`
   }
 
   to {
-   transform: rotateZ(0) scale(1.5);
+   transform: rotateZ(0) scale(1.4);
   }
 
 `;
@@ -94,5 +94,9 @@ export const ProductList = styled.ul`
         font-weight: bold;
       }
     }
+  }
+
+  @media (max-width: 800px) {
+      grid-template-columns: 1fr;
   }
 `;
