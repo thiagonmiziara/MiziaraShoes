@@ -27,12 +27,12 @@ export const Cart = styled(Link)`
 
     strong {
       display: block;
-      color: #fff;
+      color:#fb7419;
     }
 
     span {
       font-size: 12px;
-      color: #999;
+      color: #FFA500;
     }
   }
 `;

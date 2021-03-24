@@ -60,8 +60,6 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
             JSON.stringify([...cart, { ...product, amount: 1 }])
           );
 
-          toast("Adicionado");
-
           return;
         }
       }

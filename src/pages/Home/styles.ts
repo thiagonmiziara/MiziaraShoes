@@ -1,5 +1,17 @@
-import styled from 'styled-components';
-import { darken } from 'polished';
+import styled, { keyframes } from "styled-components";
+import { darken } from "polished";
+
+const ScaleAnimation = keyframes`
+ from {
+   
+    transform: rotateZ(+30deg);
+  }
+
+  to {
+   transform: rotateZ(0) scale(1.5);
+  }
+
+`;
 
 export const ProductList = styled.ul`
   display: grid;
@@ -13,10 +25,24 @@ export const ProductList = styled.ul`
     background: #fff;
     border-radius: 4px;
     padding: 20px;
+   
+    transition: 0.2s;
+
+    &:hover {
+      color: #121213;
+      background-color: rgba(255,255,255,0.8);
+      box-shadow: 5px 5px 10px 10px #fb7419;
+    }
 
     img {
       align-self: center;
       max-width: 250px;
+      min-width: 250px;
+      transform: rotateZ(+30deg);
+
+      &:hover {
+        animation: ${ScaleAnimation} 0.8s ease-in-out forwards;
+      }
     }
 
     > strong {
@@ -33,7 +59,7 @@ export const ProductList = styled.ul`
     }
 
     button {
-      background: #7159c1;
+      background: #121213;
       color: #fff;
       border: 0;
       border-radius: 4px;
@@ -45,7 +71,9 @@ export const ProductList = styled.ul`
       transition: background 0.2s;
 
       &:hover {
-        background: ${darken(0.06, '#7159c1')};
+        background: ${darken(0.06, "#fb7419")};
+        color: #121213;
+        box-shadow: 5px 5px 2px 2px #121213;
       }
 
       div {
@@ -56,6 +84,7 @@ export const ProductList = styled.ul`
 
         svg {
           margin-right: 5px;
+          
         }
       }
 
